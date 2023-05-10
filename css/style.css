@@ -1,1 +1,72 @@
-/*# sourceMappingURL=style.css.map */
+@import url("https://fonts.googleapis.com/css2?family=Hammersmith+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+body {
+  width: 100vw;
+  display: grid;
+  grid-template-columns: 1fr;
+  background: linear-gradient(85.28deg, #1D1E2C 4.09%, #000000 98%);
+  color: #ffffff;
+}
+body .header {
+  padding: 20px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  align-items: center;
+}
+body .header .logo {
+  text-transform: uppercase;
+  font-family: "Hammersmith One", sans-serif;
+  font-size: calc(30px + 2vw);
+  color: #ffffff;
+}
+body .header .nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  display: none;
+}
+body .header .nav ul li {
+  font-weight: 400;
+  font-size: 50px;
+  line-height: 21px;
+  text-align: center;
+}
+body .header .header-btns {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 21px;
+  margin-left: 100px;
+}
+body .header .header-btns .sign-btn {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  display: none;
+  background: #FFFFFF;
+  border-radius: 8px;
+  width: 142px;
+  height: 40px;
+}
+body .header .header-btns .option-btn {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100px;
+  height: 40px;
+  border-radius: 8px;
+  justify-content: space-between;
+  padding: 14px 12px;
+  background: rgba(255, 255, 255, 0.1);
+  font-family: "Roboto", sans-serif;
+}
+body .header .menu-bar i {
+  font-size: 27px;
+}
+
+.poi {
+  cursor: pointer;
+}/*# sourceMappingURL=style.css.map */
