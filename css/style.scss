@@ -1,3 +1,4 @@
+@import 'media';
 @import url('https://fonts.googleapis.com/css2?family=Hammersmith+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
@@ -35,7 +36,7 @@ $pointer: pointer;
     justify-content: center;
 }
 
-@mixin btnProp(){
+@mixin btnProp() {
     border-radius: 8px;
     border: none;
     width: 142px;
@@ -84,34 +85,61 @@ body{
         }
 
         .nav{
-            @include flexRow();
             display: $dis-none;
+            font-family: $main-font;
 
-            ul li{
+            ul{
+                @include flexRow();
+                gap: 45px;
                 font-weight: 400;
-                font-size: 50px;
-                line-height: 21px;
-                text-align: center;
+                font-size: 18px;
+                line-height: 28px;
+                text-transform: capitalize;
+
+                .category-arrow-divider{
+                    @include flexRow();
+                    align-items: center;
+                    gap: 20px;
+                    transition: .3s ease-in-out;
+
+                    img:hover{
+                        transform: rotate(180deg);
+                    }
+                }
+            }
+
+            // Media Import
+            @include laptopSize {
+                @include flexRow();
             }
         }
 
         .header-btns{
             @include flexRow();
             gap: 21px;
-            margin-left: 100px;
+
 
             .sign-btn{
                 @include flexRow();
-                display: $dis-none;
                 background: #FFFFFF;
                 @include btnProp();
+                color: #1D1E2C;
+                justify-content: center;
+                font-weight: 400;
+                font-size: 18px;
+                line-height: 28px;
+                font-family: $main-font;
+                display: $dis-none;
+
+                // Media tablet Import
+                @include tablet {
+                    display: flex;
+                }
             }
 
             .option-btn{
                 @include flexRow();
-                width: 100px; //changed btnProp()
-                height: 40px; // --
-                border-radius: 8px; //--
+                @include btnProp();
                 justify-content: space-between;
                 padding: 14px 12px;
                 background: rgba(255, 255, 255, 0.1);
@@ -124,14 +152,22 @@ body{
             i{
                 font-size: 27px;
             }
+
+            //Media Import
+            @include laptopSize {
+                display: none;
+            }
+        }
+
+        // Media Import
+        @include tablet {
+            padding: 53px;
         }
     }
     // END Header Styles
 
     // Main Section Styles
     .main{
-        @include flexCol();
-        gap: 30px;
 
         .main-info{
             padding: 20px;
@@ -154,6 +190,12 @@ body{
                 -webkit-text-fill-color: transparent;
                 background-clip: text;
                 text-fill-color: transparent;
+
+                // Media tablet Import
+                @include desktopSize {
+                    font-size: 100px;
+                    line-height: 96%;
+                }
 
                 .cr-white{
                     background: #ffffff;
@@ -226,6 +268,12 @@ body{
                         width: 15px;
                         height: 15px;
                     }
+
+                    // Media Import
+                    @include tablet {
+                        width: 223px;
+                        height: 69px;
+                    }
                 }
 
                 .sales-btn{
@@ -236,15 +284,36 @@ body{
                     img{
                         width: 15px;
                         height: 15px;
-                        // filter: hue-rotate(100%);
+                    }
+
+                    // Media Import
+                    @include tablet {
+                        width: 223px;
+                        height: 69px;
                     }
                 }
+
+                
             }
 
             .earth{
                 width: 300px;
                 height: 200px;
+
+                // Media Import
+                @include laptopSize {
+                    display: none;
+                }
             }
+        }
+
+        // Media Import
+        @include laptopSize {
+            margin-top: 50px;
+            background: url('/assets/images/Frame.png');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 40%;
         }
 
         // Footer btns style
@@ -292,7 +361,23 @@ body{
 
                 .pr-found{
                     display: $dis-none;
+
+
+                    // Media Laptop Size
+                    @include laptopSize{
+                        display: flex;
+                        font-weight: 400;
+                        font-size: 10.0675px;
+                        line-height: 21px;
+                        text-align: center;
+                    }
                 }
+
+                // Media Laptop Size 
+                @include laptopSize {
+                    width: 378px;
+                    height: 120px;
+                } 
             }
 
             // price btc style
@@ -325,12 +410,26 @@ body{
 
                     .name-and-price{
                         @include flexCol();
-                        gap: 5px; //changed 11px
+                        gap: 5px; 
+
+                        .usdt{
+                            color: rgb(196, 192, 192);
+                        }
 
                         .btc-price{
                             font-weight: 600;
                         }
+
+                        @include desktopSize{
+                            gap: 11px;
+                        }
                     }
+                }
+
+                .vertical-line{
+                    width: 0.28px;
+                    height: 44px;
+                    background: $font-color;
                 }
 
                 .price-column{
@@ -344,8 +443,19 @@ body{
                     .duration-btc{
                         color: rgba(120, 104, 104, 1);
                     }
+
+
+                }
+
+                // Media Import
+                @include laptopSize {
+                    @include flexRow();
+                    gap: 21px;
+                    width: 270px;
+                    height: 93px;
                 }
             }
+
         }
     }
 

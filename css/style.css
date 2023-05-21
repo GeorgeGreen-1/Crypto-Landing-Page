@@ -23,42 +23,73 @@ body .header .logo {
   color: #ffffff;
 }
 body .header .nav {
+  display: none;
+  font-family: "Roboto", sans-serif;
+}
+body .header .nav ul {
   display: flex;
   flex-direction: row;
   align-items: center;
-  display: none;
-}
-body .header .nav ul li {
+  gap: 45px;
   font-weight: 400;
-  font-size: 50px;
-  line-height: 21px;
-  text-align: center;
+  font-size: 18px;
+  line-height: 28px;
+  text-transform: capitalize;
+}
+body .header .nav ul .category-arrow-divider {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  align-items: center;
+  gap: 20px;
+  transition: 0.3s ease-in-out;
+}
+body .header .nav ul .category-arrow-divider img:hover {
+  transform: rotate(180deg);
+}
+@media screen and (min-width: 1024px) {
+  body .header .nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
 }
 body .header .header-btns {
   display: flex;
   flex-direction: row;
   align-items: center;
   gap: 21px;
-  margin-left: 100px;
 }
 body .header .header-btns .sign-btn {
   display: flex;
   flex-direction: row;
   align-items: center;
-  display: none;
   background: #FFFFFF;
   border-radius: 8px;
   border: none;
   width: 142px;
   height: 40px;
+  color: #1D1E2C;
+  justify-content: center;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 28px;
+  font-family: "Roboto", sans-serif;
+  display: none;
+}
+@media screen and (min-width: 700px) {
+  body .header .header-btns .sign-btn {
+    display: flex;
+  }
 }
 body .header .header-btns .option-btn {
   display: flex;
   flex-direction: row;
   align-items: center;
-  width: 100px;
-  height: 40px;
   border-radius: 8px;
+  border: none;
+  width: 142px;
+  height: 40px;
   justify-content: space-between;
   padding: 14px 12px;
   background: rgba(255, 255, 255, 0.1);
@@ -67,11 +98,15 @@ body .header .header-btns .option-btn {
 body .header .menu-bar i {
   font-size: 27px;
 }
-body .main {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 30px;
+@media screen and (min-width: 1024px) {
+  body .header .menu-bar {
+    display: none;
+  }
+}
+@media screen and (min-width: 700px) {
+  body .header {
+    padding: 53px;
+  }
 }
 body .main .main-info {
   padding: 20px;
@@ -95,6 +130,12 @@ body .main .main-info h1 {
   -webkit-text-fill-color: transparent;
   background-clip: text;
   text-fill-color: transparent;
+}
+@media screen and (min-width: 1600px) {
+  body .main .main-info h1 {
+    font-size: 100px;
+    line-height: 96%;
+  }
 }
 body .main .main-info h1 .cr-white {
   background: #ffffff;
@@ -214,6 +255,12 @@ body .main .main-info .services-btns .str-btn img {
   width: 15px;
   height: 15px;
 }
+@media screen and (min-width: 700px) {
+  body .main .main-info .services-btns .str-btn {
+    width: 223px;
+    height: 69px;
+  }
+}
 body .main .main-info .services-btns .sales-btn {
   border-radius: 8px;
   border: none;
@@ -236,9 +283,29 @@ body .main .main-info .services-btns .sales-btn img {
   width: 15px;
   height: 15px;
 }
+@media screen and (min-width: 700px) {
+  body .main .main-info .services-btns .sales-btn {
+    width: 223px;
+    height: 69px;
+  }
+}
 body .main .main-info .earth {
   width: 300px;
   height: 200px;
+}
+@media screen and (min-width: 1024px) {
+  body .main .main-info .earth {
+    display: none;
+  }
+}
+@media screen and (min-width: 1024px) {
+  body .main {
+    margin-top: 50px;
+    background: url("/assets/images/Frame.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 40%;
+  }
 }
 body .main .footer-div {
   width: 100%;
@@ -288,6 +355,21 @@ body .main .footer-div .founder-box .founder-prof .name-and-position p {
 body .main .footer-div .founder-box .pr-found {
   display: none;
 }
+@media screen and (min-width: 1024px) {
+  body .main .footer-div .founder-box .pr-found {
+    display: flex;
+    font-weight: 400;
+    font-size: 10.0675px;
+    line-height: 21px;
+    text-align: center;
+  }
+}
+@media screen and (min-width: 1024px) {
+  body .main .footer-div .founder-box {
+    width: 378px;
+    height: 120px;
+  }
+}
 body .main .footer-div .price-btc {
   background: linear-gradient(90deg, #040506 1.7%, #1C1D2A 101.56%);
   border-radius: 10px;
@@ -324,8 +406,21 @@ body .main .footer-div .price-btc .price-row .name-and-price {
   justify-content: center;
   gap: 5px;
 }
+body .main .footer-div .price-btc .price-row .name-and-price .usdt {
+  color: rgb(196, 192, 192);
+}
 body .main .footer-div .price-btc .price-row .name-and-price .btc-price {
   font-weight: 600;
+}
+@media screen and (min-width: 1600px) {
+  body .main .footer-div .price-btc .price-row .name-and-price {
+    gap: 11px;
+  }
+}
+body .main .footer-div .price-btc .vertical-line {
+  width: 0.28px;
+  height: 44px;
+  background: #ffffff;
 }
 body .main .footer-div .price-btc .price-column {
   display: flex;
@@ -338,6 +433,16 @@ body .main .footer-div .price-btc .price-column .stat-btc {
 }
 body .main .footer-div .price-btc .price-column .duration-btc {
   color: rgb(120, 104, 104);
+}
+@media screen and (min-width: 1024px) {
+  body .main .footer-div .price-btc {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 21px;
+    width: 270px;
+    height: 93px;
+  }
 }
 
 .poi {
